@@ -1,5 +1,9 @@
 import java.util.HashMap;
 
+/** 
+    根据该网站学习并且编写: https://labuladong.gitbook.io/algo/dong-tai-gui-hua-xi-lie/targetsum
+*/
+
 class FindTargetSumWays {
     public int result = 0;
 
