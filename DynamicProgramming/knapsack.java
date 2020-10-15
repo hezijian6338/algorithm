@@ -1,5 +1,9 @@
 import java.util.HashMap;
 
+/**
+根据该网站学习并且编写: https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247485064&idx=1&sn=550705eb67f5e71487c8b218382919d6&chksm=9bd7f880aca071962a5a17d0f85d979d6f0c5a5ce32c84b8fee88e36d451f9ccb3bb47b88f78&mpshare=1&scene=1&srcid=1015MFuGMgLE69gGGB7kpPSN&sharer_sharetime=1602723704054&sharer_shareid=75f4c16dc57d6f06b28e6a1a014735c4&rd2werd=1#wechat_redirect
+*/
+
 class Knapsack {
     public int result = 0;
     public int max = 0;
