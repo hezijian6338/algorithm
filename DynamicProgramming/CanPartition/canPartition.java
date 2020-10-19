@@ -1,3 +1,7 @@
+/**
+根据该网站学习并且编写: https://labuladong.gitbook.io/algo/dong-tai-gui-hua-xi-lie/bei-bao-zi-ji
+*/
+
 class CanPartition {
     public Boolean canPartition(Integer[] nums) {
         Integer size = nums.length;
