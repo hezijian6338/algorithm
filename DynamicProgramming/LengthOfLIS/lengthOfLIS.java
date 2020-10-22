@@ -8,7 +8,6 @@ class LengthOfLIS {
 
   public void backtrack(int[] nums, int i, int tmp) {
 
-    System.out.println(tmp);
     if (tmp > this.max) {
       this.max = tmp;
     }
