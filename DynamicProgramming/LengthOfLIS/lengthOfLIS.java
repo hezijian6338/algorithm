@@ -1,27 +1,29 @@
 class LengthOfLIS {
   public int max = 0;
-  public int tmp = 1;
+  public int tmp = 0;
 
   LengthOfLIS() {
     
   }
 
-  public void backtrack(int[] nums, int i, int j) {
-    if (j == 0) {
-      System.out.println(this.tmp);
-      if (this.tmp > this.max) {
-        this.max = this.tmp;
-      }
+  public void backtrack(int[] nums, int i, int tmp) {
+
+    System.out.println(tmp);
+    if (tmp > this.max) {
+      this.max = tmp;
+    }
+
+    if (i == 0) {
       return;
     }
 
-    for (j = j - 1; j >= 0; j--) {
-      if (nums[j] < nums[i]) {
-        this.tmp += 1;
-        backtrack(nums, i - 1, j);
-        this.tmp -= 1;
+    for (int k = i - 1; k >= 0; k--) {
+      if (nums[k] < nums[i]) {
+        tmp += 1;
+        backtrack(nums, k, tmp);
+        tmp -= 1;
       } else {
-        backtrack(nums, i, j - 1);
+        backtrack(nums, k, 1);
       }
     }
   }
@@ -29,9 +31,9 @@ class LengthOfLIS {
   public static void main(String[] args) {
     LengthOfLIS lis = new LengthOfLIS();
 
-    int[] nums = {1, 4, 3, 4, 2};
+    int[] nums = {1, 4, 3, 6, 5};
 
-    lis.backtrack(nums, nums.length - 1, nums.length - 1);
+    lis.backtrack(nums, nums.length - 1, 1);
 
     System.out.println(lis.max);
   }
