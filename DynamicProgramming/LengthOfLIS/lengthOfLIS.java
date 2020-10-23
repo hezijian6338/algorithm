@@ -52,7 +52,7 @@ class LengthOfLIS {
 
     for (int j = i - 1; j >= 0; j--) {
       if (nums[j] < nums[i]) {
-        int res = (this.dp(nums, j, tmp) + 1) > this.dp(nums, j, tmp) ? (this.dp(nums, j, tmp) + 1) : this.dp(nums, j, tmp);
+        int res = (this.dp(nums, j, tmp) + 1);
         this.memo.put(i, res);
         return res;
       } else {
