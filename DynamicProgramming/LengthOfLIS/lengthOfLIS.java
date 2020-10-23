@@ -47,16 +47,18 @@ class LengthOfLIS {
 
     if (i == 0) {
       this.memo.put(i, tmp);
-      System.out.println(this.memo);
       return tmp;
     }
 
     for (int j = i - 1; j >= 0; j--) {
       if (nums[j] < nums[i]) {
-        int res = (this.dp(nums, j, tmp) + 1);
+        int res = (this.dp(nums, j, tmp) + 1) > this.dp(nums, j, tmp) ? (this.dp(nums, j, tmp) + 1) : this.dp(nums, j, tmp);
+        this.memo.put(i, res);
         return res;
       } else {
-        return this.dp(nums, j, tmp);
+        int res = this.dp(nums, j, tmp);
+        this.memo.put(i, res);
+        return res;
       }
     }
 
@@ -96,6 +98,6 @@ class LengthOfLIS {
 
     System.out.println(lis.lengthOfLIS(nums));
 
-    // System.out.println(lis.memo);
+    System.out.println(lis.memo);
   }
 }
