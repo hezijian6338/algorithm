@@ -8,7 +8,7 @@ class MinDistance {
 
   private String s1 = "";
   private String s2 = "";
-  private HashMap<String, Integer> memo = new HashMap<>();
+  public HashMap<String, Integer> memo = new HashMap<>();
 
   public int min = 999;
   private int tmp = 0;
@@ -94,12 +94,16 @@ class MinDistance {
     }
 
     if (this.s1.charAt(i) == this.s2.charAt(j)) {
-      return dp(i - 1, j - 1);
+      int res = dp(i - 1, j - 1);
+      this.memo.put(key, res);
+      return res;
     } else {
       int insert = Recursion(i, j - 1) + 1;
       int delete = Recursion(i - 1, j) + 1;
       int replace = Recursion(i - 1, j - 1) + 1;
-      return (insert < delete ? insert : delete) < replace ? (insert < delete ? insert : delete) : replace;
+      int res = (insert < delete ? insert : delete) < replace ? (insert < delete ? insert : delete) : replace;
+      this.memo.put(key, res);
+      return res;
     }
   }
 
@@ -152,5 +156,6 @@ class MinDistance {
     System.out.println(md.Recursion(s1.length() - 1, s2.length() - 1));
     System.out.println(md.dp(s1.length() - 1, s2.length() - 1));
     System.out.println(md._MinDistance());
+    System.out.println(md.memo);
   }
 }

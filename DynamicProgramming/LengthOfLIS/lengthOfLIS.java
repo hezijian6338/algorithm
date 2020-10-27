@@ -15,11 +15,14 @@ class LengthOfLIS {
 
   public void backtrack(int[] nums, int i, int tmp) {
 
-    if (tmp > this.max) {
-      this.max = tmp;
-    }
+    // if (tmp > this.max) {
+    //   this.max = tmp;
+    // }
 
     if (i == 0) {
+      if (tmp > this.max) {
+        this.max = tmp;
+      }
       return;
     }
 
@@ -35,8 +38,6 @@ class LengthOfLIS {
   }
 
   public int dp(int[] nums, int i, int tmp) {
-    this.max = 0;
-
     if (this.memo.containsKey(i)) {
       return this.memo.get(i);
     }
@@ -93,6 +94,8 @@ class LengthOfLIS {
     lis.backtrack(nums, nums.length - 1, 1);
 
     System.out.println(lis.max);
+
+    lis.max = 0;
 
     System.out.println(lis.dp(nums, nums.length - 1, 1));
 
