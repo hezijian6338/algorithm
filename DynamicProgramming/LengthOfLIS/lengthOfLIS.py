@@ -23,17 +23,13 @@ class LengthOfLIS(object):
 
         if i == 0:
             if self.max < tmp:
-                self.memo[i] = self.max
-                return self.max
-            return tmp
+                self.max = tmp
+            self.memo[i] = self.max
+            return self.max
 
         for j in range(i - 1, -1, -1):
             if nums[i] > nums[j]:
                 res = self.dp(nums, j, tmp) + 1
-                self.memo[i] = res
-                return res
-            else:
-                res = self.dp(nums, j, 1)
                 self.memo[i] = res
                 return res
 

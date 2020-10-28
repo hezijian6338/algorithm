@@ -42,22 +42,17 @@ class LengthOfLIS {
       return this.memo.get(i);
     }
 
-    if (tmp > this.max) {
-      this.max = tmp;
-    }
-
     if (i == 0) {
-      this.memo.put(i, tmp);
-      return tmp;
+      if (tmp > this.max) {
+        this.max = tmp;
+      }
+      this.memo.put(i, this.max);
+      return this.max;
     }
 
     for (int j = i - 1; j >= 0; j--) {
       if (nums[j] < nums[i]) {
         int res = (this.dp(nums, j, tmp) + 1);
-        this.memo.put(i, res);
-        return res;
-      } else {
-        int res = this.dp(nums, j, tmp);
         this.memo.put(i, res);
         return res;
       }
