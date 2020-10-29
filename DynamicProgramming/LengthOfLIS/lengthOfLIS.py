@@ -1,3 +1,5 @@
+# 根据该网站学习并且编写: https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247485269&idx=1&sn=571a6366b0b592f103971ae3e119998b&chksm=9bd7f95daca0704be3c5c839cd96ab1a94efaefb48fa3101522a02fa19af9ef48170e03cd817&mpshare=1&scene=1&srcid=1019x3mKUXSJdEpVRvE8MIbe&sharer_sharetime=1603104666692&sharer_shareid=75f4c16dc57d6f06b28e6a1a014735c4&rd2werd=1#wechat_redirect
+
 class LengthOfLIS(object):
     def __init__(self):
         self.max = 0
