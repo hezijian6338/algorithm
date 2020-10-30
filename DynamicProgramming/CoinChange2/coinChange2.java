@@ -1,4 +1,38 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.HashSet;
+
 class CoinChange2 {
+  public int res = 0;
+  public List<Integer> track = new ArrayList<>();
+  public HashSet<List<Integer>> path = new HashSet<>();
+
+  public void backtrack(int[] coins, int target, int reset) {
+    if (reset == 0) {
+      Collections.sort(track);
+      if (!path.contains(track)) {
+        path.add(track);
+        System.out.println(track);
+        this.res += 1;
+      }
+      return;
+    }
+
+    for (int i = 0; i < coins.length; i++) {
+      if (reset - coins[i] >= 0) {
+        track.add(coins[i]);
+        reset = reset - coins[i];
+        this.backtrack(coins, target, reset);
+        track.remove(track.size() - 1);
+        reset = reset + coins[i];
+      } 
+      else {
+        continue;
+      }
+    }
+  }
+
   public int coinChange2(int[] coins, int amount) {
     int[][] dp = new int[coins.length + 1][amount + 1];
     for (int i = 0; i < amount + 1; i++) {
@@ -28,5 +62,11 @@ class CoinChange2 {
     int amount = 5;
     int res = cc2.coinChange2(coins, amount);
     System.out.println(res);
+    // try {
+      cc2.backtrack(coins, amount, amount);
+      System.out.println(cc2.res);
+    // } catch (Exception e) {
+    //   System.out.println(e);
+    // }
   }
 }
