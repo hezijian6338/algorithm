@@ -8,7 +8,7 @@ class CoinChange2 {
   public List<Integer> track = new ArrayList<>();
   public HashSet<List<Integer>> path = new HashSet<>();
 
-  public void backtrack(int[] coins, int target, int reset) {
+  public void backtrack(int[] coins, int reset) {
     if (reset == 0) {
       Collections.sort(track);
       if (!path.contains(track)) {
@@ -23,7 +23,7 @@ class CoinChange2 {
       if (reset - coins[i] >= 0) {
         track.add(coins[i]);
         reset = reset - coins[i];
-        this.backtrack(coins, target, reset);
+        this.backtrack(coins, reset);
         track.remove(track.size() - 1);
         reset = reset + coins[i];
       } 
@@ -62,11 +62,7 @@ class CoinChange2 {
     int amount = 5;
     int res = cc2.coinChange2(coins, amount);
     System.out.println(res);
-    // try {
-      cc2.backtrack(coins, amount, amount);
-      System.out.println(cc2.res);
-    // } catch (Exception e) {
-    //   System.out.println(e);
-    // }
+    cc2.backtrack(coins, amount);
+    System.out.println(cc2.res);
   }
 }
