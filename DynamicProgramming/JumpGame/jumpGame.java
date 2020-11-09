@@ -13,4 +13,14 @@ class JumpGame {
 
     return farthest >= n - 1;
   }
+
+  public static void main(String[] args) {
+    JumpGame jg = new JumpGame();
+    int[] nums = {2, 3, 1, 1, 4};
+    int[] _nums = {3, 2, 1, 0, 4};
+    boolean res = jg.canJump(nums);
+    boolean _res = jg.canJump(_nums);
+    System.out.println(res);
+    System.out.println(_res);
+  }
 }
