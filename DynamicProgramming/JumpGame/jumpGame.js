@@ -1,3 +1,7 @@
+/**
+根据该网站学习并且编写: https://labuladong.gitbook.io/algo/dong-tai-gui-hua-xi-lie/1.4-tan-xin-lei-xing-wen-ti/tiao-yue-you-xi
+*/
+
 class JumpGame {
   constructor() {
 

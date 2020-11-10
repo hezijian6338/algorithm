@@ -1,3 +1,5 @@
+# 根据该网站学习并且编写: https://labuladong.gitbook.io/algo/dong-tai-gui-hua-xi-lie/1.2-zi-xu-lie-lei-xing-wen-ti/lcs
+
 class LongestCommonSubsequence(object):
     def __init__(self, s1, s2):
         self.s1 = s1

@@ -1,3 +1,7 @@
+/**
+根据该网站学习并且编写: https://labuladong.gitbook.io/algo/dong-tai-gui-hua-xi-lie/1.2-zi-xu-lie-lei-xing-wen-ti/lcs
+*/
+
 class LongestCommonSubsequence {
   private String s1 = "";
   private String s2 = "";
